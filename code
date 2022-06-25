@@ -1,6 +1,6 @@
 #include <LiquidCrystal.h> // include LCD library
 
-const int BUTTON [] = {13, 12}; // {on, off} ports
+const int BUTTON[] = {13, 12}; // {on, off} ports
 const int MOTOR[] = {9, 10, 11}; // {1&2, 1, 2} ports
 const int LED = 8; // led town port
 const int POTENT = A0; // potentiometer port
@@ -28,6 +28,7 @@ void turbineSpeed() { // wind turbine speed changer using potentiometer
  }
 
 }
+
 void motorState(int value) { // motor control function
  turbineSpeed(); // run turbine speed function
  analogWrite(MOTOR[0], speed); // determine speed of motor based on turbinespeed()
@@ -65,6 +66,7 @@ void setup() {
  lcd.setCursor(0, 1); lcd.print("TOWN POWER:"); // print "town power:" in row 2
  Serial.begin(9600);
 }
+
 void loop() {
  Serial.println(potentValue);
 
